@@ -179,6 +179,7 @@ footer[role="contentinfo"]{background:#1B2429;border-top:1px solid var(--line-d)
 .footer-top{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--line-d)}
 .footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.15rem;letter-spacing:.06em;color:var(--gold);margin-bottom:1rem;font-weight:500}
 .footer-brand span{color:var(--teal)}
+.footer-logo{height:2rem;width:auto;display:block;margin-bottom:1.1rem}
 .footer-tagline{font-size:.78rem;font-weight:300;color:rgba(234,239,242,.28);line-height:1.7;max-width:220px}
 .footer-col-title{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(234,239,242,.2);margin-bottom:1.25rem}
 .footer-links-col{display:flex;flex-direction:column;gap:.6rem}
@@ -238,6 +239,15 @@ footer[role="contentinfo"]{background:#1B2429;border-top:1px solid var(--line-d)
 .about-photo{margin-top:2.25rem;overflow:hidden;border-radius:3px;border:1px solid var(--line-l)}
 .about-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;filter:grayscale(1) contrast(1.03);transition:filter .55s ease,transform .6s ease}
 .about-photo:hover img{filter:grayscale(0);transform:scale(1.04)}
+/* WATCH / VIDEO SECTION */
+.watch-wrap{text-align:center;max-width:800px;margin:0 auto}
+.watch-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.9vw,2.6rem);font-weight:300;line-height:1.25;color:var(--paper);margin-top:.75rem;letter-spacing:.01em}
+.watch-title em{font-style:italic;font-family:'Cormorant Garamond',serif;color:var(--teal)}
+.watch-video{position:relative;display:block;width:100%;max-width:760px;margin:2.75rem auto 0;padding:0;border:1px solid var(--line-d);overflow:hidden;cursor:pointer;background:none;line-height:0}
+.watch-video img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;filter:grayscale(1) contrast(1.05) brightness(.95);transition:filter .6s ease,transform .6s ease}
+.watch-video::after{content:'';position:absolute;inset:0;background:var(--teal);mix-blend-mode:color;opacity:.9;transition:opacity .6s ease;pointer-events:none}
+.watch-video:hover img,.watch-video:focus-visible img{filter:none;transform:scale(1.03)}
+.watch-video:hover::after,.watch-video:focus-visible::after{opacity:0}
 .team-card{max-width:300px;border:1px solid var(--line-d);padding:2.5rem;margin-top:3rem}
 .team-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--paper);margin-bottom:.25rem}
 .team-role{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
@@ -357,6 +367,16 @@ footer[role="contentinfo"]{background:#1B2429;border-top:1px solid var(--line-d)
     </div>
   </div>
   <div class="hero-scroll" aria-hidden="true"><div class="scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<section class="sec bg-ink watch-sec" aria-labelledby="watch-h">
+  <div class="container watch-wrap">
+    <p class="lbl-teal-light reveal" data-n="▶" style="justify-content:center">Why It Matters</p>
+    <h2 class="watch-title reveal" id="watch-h">Click the video below to see how Seek Research helps move dormant properties <em>forward</em> — and why it matters.</h2>
+    <button class="watch-video reveal" onclick="showPage('testimonials')" aria-label="Watch — how Seek Research helps move dormant properties forward">
+      <img src="assets/watch-video.webp" alt="Video still — how Seek Research helps move dormant properties forward">
+    </button>
+  </div>
 </section>
 
 <section class="sec bg-off" aria-labelledby="diff-h">
@@ -984,7 +1004,7 @@ footer[role="contentinfo"]{background:#1B2429;border-top:1px solid var(--line-d)
 <footer role="contentinfo">
   <div class="footer-top">
     <div>
-      <div class="footer-brand">SEEK<span>«</span> RESEARCH</div>
+      <img class="footer-logo" src="assets/logo.png" alt="Seek Research">
       <p class="footer-tagline">Impact-driven. Rooted in research. Results that matter.</p>
     </div>
     <div>
